@@ -1,20 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    public float speed = 0.8f;
-
+    private int hp = 1;
+    private int damage = 1;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
-            speed *= 2;
+        if(collision.gameObject.CompareTag("Player"))
+            this.GetComponentInParent<EnemyAI>().speed *= 3;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
-            speed /= 2;
+        if (collision.gameObject.CompareTag("Player"))
+            this.GetComponentInParent<EnemyAI>().speed /= 3;
     }
 }
