@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Spawn
+  - Undefined
+  - CurrentHead
+  - Head
   layers:
   - Default
   - TransparentFX
