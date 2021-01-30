@@ -526,6 +526,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7324797083371087746, guid: 07ee4e10574b39540b9fb3c0523022e6,
+        type: 3}
+      propertyPath: m_TagString
+      value: DashLimit
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324797083412580144, guid: 07ee4e10574b39540b9fb3c0523022e6,
+        type: 3}
+      propertyPath: idleSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324797083412580144, guid: 07ee4e10574b39540b9fb3c0523022e6,
+        type: 3}
+      propertyPath: movementidth
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7324797085096991364, guid: 07ee4e10574b39540b9fb3c0523022e6,
         type: 3}
       propertyPath: m_Name
