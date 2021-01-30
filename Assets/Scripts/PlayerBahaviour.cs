@@ -7,13 +7,8 @@ public class PlayerBahaviour : MonoBehaviour
     public Rigidbody2D rb;
     public Camera cam;
 
-    Vector2 movement, mousePos;
-
-    public GameObject currentHead, newHead;
-
-    void Start() {
-        currentHead = GameObject.FindGameObjectWithTag("CurrentHead");
-    }
+    Vector2 movement;
+    Vector2 mousePos;
 
     void Update()
     {
@@ -27,18 +22,8 @@ public class PlayerBahaviour : MonoBehaviour
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
-        // Vector2 lookDirection = mousePos - rb.position;
-        // float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
-        // rb.rotation = angle;
-    }
-
-    void CollectHead(GameObject obj) {
-        Debug.Log(obj);
-    }
-
-    private void OnTriggerEnter2D(Collider2D col) {
-        if(col.gameObject.tag == "Head") {
-            CollectHead(col.gameObject);
-        }
+        Vector2 lookDirection = mousePos - rb.position;
+        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
+        rb.rotation = angle;
     }
 }   
