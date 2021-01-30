@@ -6,7 +6,8 @@ TagManager:
   tags:
   - Spawn
   - Door
-  - DashLimit
+  - Head
+  - CurrentHead
   layers:
   - Default
   - TransparentFX
