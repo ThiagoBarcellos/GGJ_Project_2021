@@ -8,12 +8,13 @@ public class PlayerBehaviour : MonoBehaviour
     public Sprite[] healthIndicator = new Sprite[4];
     public GameObject crossHair;
     public Rigidbody2D rb;
-    public Camera cam;
+    private Camera cam;
     public GameObject currentHead;
     Vector2 movement, mousePos;
 
     void Start()
     {
+        cam = Camera.main;
         Cursor.visible = false;
         //currentHead = GameObject.FindGameObjectWithTag("CurrentHead");
     }
