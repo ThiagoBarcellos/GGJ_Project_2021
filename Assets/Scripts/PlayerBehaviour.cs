@@ -6,6 +6,7 @@ public class PlayerBehaviour : MonoBehaviour
     public float moveSpeed = 5f;
     public int playerHealth = 3;
     public Sprite[] healthIndicator = new Sprite[4];
+    public GameObject crossHair;
     public Rigidbody2D rb;
     public Camera cam;
     public GameObject currentHead;
@@ -13,7 +14,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Start()
     {
-
+        Cursor.visible = false;
         //currentHead = GameObject.FindGameObjectWithTag("CurrentHead");
     }
 
@@ -28,8 +29,10 @@ public class PlayerBehaviour : MonoBehaviour
     void FixedUpdate()
     {
         CheckPlayerHealth();
+
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
+        crossHair.transform.position = mousePos;
         Vector2 lookDirection = mousePos - rb.position;
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angle;

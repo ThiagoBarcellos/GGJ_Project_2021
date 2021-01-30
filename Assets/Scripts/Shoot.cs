@@ -11,7 +11,7 @@ public class Shoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        moveSpeedInitial = Shooting.bulletForce;
+        //moveSpeedInitial = Shooting.bulletForce;
         moveSpeed = moveSpeedInitial;
 
         rb = GetComponent<Rigidbody2D>();
