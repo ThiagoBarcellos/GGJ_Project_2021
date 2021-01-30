@@ -9,6 +9,8 @@ TagManager:
   - DashLimit
   - Enemy
   - Health
+  - Head
+  - CurrentHead
   layers:
   - Default
   - TransparentFX
