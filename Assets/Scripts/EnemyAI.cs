@@ -3,10 +3,10 @@
 public class EnemyAI : MonoBehaviour
 {
     private GameObject Player;
-    private bool isTouching = false;
+    public bool isTouching = false;
     public GameObject startingPosition;
 
-    public float speed = 0.5f;
+    EnemyAttack enat;
 
     void Start(){
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -31,6 +31,6 @@ public class EnemyAI : MonoBehaviour
     void MoveTo(GameObject target){
         Vector2 toTarget = target.transform.position - transform.position;
 
-        transform.Translate(toTarget * speed * Time.deltaTime);
+        transform.Translate(toTarget * enat.speed * Time.deltaTime);
     }
 }
