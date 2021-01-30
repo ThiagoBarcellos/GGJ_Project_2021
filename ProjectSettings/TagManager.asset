@@ -5,12 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Spawn
-<<<<<<< HEAD
   - Door
-  - Head
-  - CurrentHead
-=======
->>>>>>> parent of 009e599... (update)
+  - DashLimit
+  - Enemy
+  - Health
   layers:
   - Default
   - TransparentFX

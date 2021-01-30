@@ -1,16 +1,14 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerBahaviour : MonoBehaviour
 {
     public float moveSpeed = 5f;
+
     public Rigidbody2D rb;
     public Camera cam;
 
-    Vector2 movement, mousePos;
-
-    void Start() {
-        currentHead = GameObject.FindGameObjectWithTag("CurrentHead");
-    }
+    Vector2 movement;
+    Vector2 mousePos;
 
     void Update()
     {
@@ -28,5 +26,4 @@ public class PlayerBahaviour : MonoBehaviour
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angle;
     }
-
 }   
