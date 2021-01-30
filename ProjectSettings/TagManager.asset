@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Spawn
+  - Door
+  - DashLimit
+  - Enemy
+  - Health
+  - Head
+  - CurrentHead
   layers:
   - Default
   - TransparentFX
