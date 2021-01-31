@@ -23,6 +23,11 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Update()
     {
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        Vector2 lookDirection = mousePos - rb.position;
+        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
+        rb.rotation = angle;
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
