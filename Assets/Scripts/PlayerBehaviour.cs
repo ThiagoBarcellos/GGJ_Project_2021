@@ -8,13 +8,14 @@ public class PlayerBehaviour : MonoBehaviour
     public Sprite[] healthIndicator = new Sprite[4];
     public Rigidbody2D rb;
     public Camera cam;
-    public GameObject currentHead;
+    GameObject newHead, currentHead;
+    bool isTouchingHead = false;
     Vector2 movement, mousePos;
 
     void Start()
     {
-
-        //currentHead = GameObject.FindGameObjectWithTag("CurrentHead");
+        if(GameObject.FindGameObjectWithTag("CurrentHead"))
+            currentHead = GameObject.FindGameObjectWithTag("CurrentHead");
     }
 
     void Update()
@@ -33,11 +34,13 @@ public class PlayerBehaviour : MonoBehaviour
         Vector2 lookDirection = mousePos - rb.position;
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angle;
+
+        if(isTouchingHead && Input.GetButtonDown("Collect"))
+            CollectHead();
     }
 
     void OnCollisionEnter2D(Collision2D col)
     {
-
         if (col.gameObject.CompareTag("Enemy"))
         {
             playerHealth -= col.gameObject.GetComponent<EnemyBehaviour>().damage;
@@ -64,6 +67,30 @@ public class PlayerBehaviour : MonoBehaviour
             default:
                 GameObject.FindGameObjectWithTag("Health").GetComponent<Image>().sprite = healthIndicator[3];
                 break;
+        }
+    }
+
+    void CollectHead() {
+        Transform player = this.gameObject.transform;
+        Vector2 playerPos = new Vector2(player.position.x, player.position.y);
+
+        if(currentHead)
+            Destroy(currentHead);
+        
+        newHead.transform.SetParent(player);
+        // newHead.transform.position = playerPos + new Vector2(0, 0.5f);
+    }
+
+    void OnTriggerEnter2D(Collider2D col) {
+        if(col.gameObject.CompareTag("Head")) {
+            isTouchingHead = true;
+            newHead = col.gameObject;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D col) {
+        if(col.gameObject.CompareTag("Head")) {
+            isTouchingHead = false;
         }
     }
 }

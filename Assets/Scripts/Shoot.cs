@@ -7,11 +7,12 @@ public class Shoot : MonoBehaviour
     Rigidbody2D rb;
     float moveSpeed, moveSpeedInitial;
     Vector3 lastPosition;
+     public float bulletForce = 20f;
 
     // Start is called before the first frame update
     void Start()
     {
-        moveSpeedInitial = Shooting.bulletForce;
+        moveSpeedInitial = bulletForce;
         moveSpeed = moveSpeedInitial;
 
         rb = GetComponent<Rigidbody2D>();

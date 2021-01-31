@@ -295,9 +295,9 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634774213}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -321,7 +321,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.005808726, y: 0.0038724542}
   m_SpriteTilingProperty:
     border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
     pivot: {x: 0.5, y: 0.5}
@@ -332,7 +332,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.24906692, y: 0.26068428}
   m_EdgeRadius: 0
 --- !u!1 &667468567 stripped
 GameObject:
@@ -766,7 +766,7 @@ PrefabInstance:
     - target: {fileID: 4377358943576931189, guid: feffc7559ea3d244eab0556cf0e4ef58,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.83
+      value: 5.57
       objectReference: {fileID: 0}
     - target: {fileID: 4377358943576931189, guid: feffc7559ea3d244eab0556cf0e4ef58,
         type: 3}
