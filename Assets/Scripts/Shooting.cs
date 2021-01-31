@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
@@ -9,11 +7,26 @@ public class Shooting : MonoBehaviour
     public static float bulletForce = 10f;
     public int numberOfShoots = 1;
     GameObject currentHead;
+    Rigidbody2D rb;
+    Camera cam;
+    Vector2 mousePos;
+
+
+    void Start(){
+        cam = Camera.main;
+        rb = GameObject.FindGameObjectWithTag("FirePoint").GetComponent<Rigidbody2D>();
+    }
 
     float moveSpeedInitial;
 
     void Update()
     {
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        Vector2 lookDirection = mousePos - rb.position;
+        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
+        rb.rotation = angle;
+
         if(GameObject.FindGameObjectWithTag("CurrentHead"))
             currentHead = GameObject.FindGameObjectWithTag("CurrentHead");
 
