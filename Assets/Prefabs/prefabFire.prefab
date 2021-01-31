@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3471899682969345051}
   m_Layer: 0
   m_Name: prefabFire
-  m_TagString: Untagged
+  m_TagString: Shoot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,7 +117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a725ea65b25f8a34fa195b334ee3840e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletForce: 20
 --- !u!58 &3471899682969345051
 CircleCollider2D:
   m_ObjectHideFlags: 0

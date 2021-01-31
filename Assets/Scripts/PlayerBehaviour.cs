@@ -7,7 +7,7 @@ public class PlayerBehaviour : MonoBehaviour
     public int playerHealth = 3;
     public Sprite[] healthIndicator = new Sprite[4];
     public GameObject crossHair;
-    public Rigidbody2D rb, firePointRb;
+    public Rigidbody2D rb;
     public Camera cam;
     GameObject newHead, currentHead;
     bool isTouchingHead = false;
@@ -36,9 +36,9 @@ public class PlayerBehaviour : MonoBehaviour
 
         crossHair.transform.position = mousePos;
         
-        Vector2 lookDirection = mousePos - firePointRb.position;
+        Vector2 lookDirection = mousePos - rb.position;
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
-        firePointRb.rotation = angle;
+        rb.rotation = angle;
 
         if(isTouchingHead && Input.GetButtonDown("Collect"))
             CollectHead();
