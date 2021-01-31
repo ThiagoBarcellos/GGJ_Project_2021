@@ -129,8 +129,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  playerHealth: 3
+  healthIndicator:
+  - {fileID: 21300000, guid: 204b7a20b386b59418f2f0a6856711e3, type: 3}
+  - {fileID: 21300000, guid: f0fce34a608ad2041bb3376121a74d46, type: 3}
+  - {fileID: 21300000, guid: 6e21f770e4e414d409d167853f89d02e, type: 3}
+  - {fileID: 21300000, guid: 28c4ace094bdf054b86f285c5419e273, type: 3}
+  crossHair: {fileID: 4012568892765433620, guid: eca50555f7a3e9d42b1eef4c1d7c5af8,
+    type: 3}
   rb: {fileID: 4543198317922792488}
   cam: {fileID: 0}
+  currentHead: {fileID: 0}
 --- !u!50 &4543198317922792488
 Rigidbody2D:
   serializedVersion: 4
