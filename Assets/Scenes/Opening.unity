@@ -778,6 +778,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4543198317922792490, guid: 4897d3790761b1e4fa59c52c87700f98,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4543198317922792491, guid: 4897d3790761b1e4fa59c52c87700f98,
         type: 3}
       propertyPath: m_Name
@@ -1015,7 +1020,7 @@ PrefabInstance:
     - target: {fileID: 4969341976105138532, guid: e77fa1273127a5949916d8204e37eb8d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.91
+      value: 3.42
       objectReference: {fileID: 0}
     - target: {fileID: 4969341976105138532, guid: e77fa1273127a5949916d8204e37eb8d,
         type: 3}
@@ -1056,6 +1061,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969341976105138533, guid: e77fa1273127a5949916d8204e37eb8d,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969341976105138533, guid: e77fa1273127a5949916d8204e37eb8d,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969341976105138534, guid: e77fa1273127a5949916d8204e37eb8d,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.07325554
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969341976105138534, guid: e77fa1273127a5949916d8204e37eb8d,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.9113336
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969341976105138534, guid: e77fa1273127a5949916d8204e37eb8d,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0022611152
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969341976105138534, guid: e77fa1273127a5949916d8204e37eb8d,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.38233304
       objectReference: {fileID: 0}
     - target: {fileID: 4969341976105138535, guid: e77fa1273127a5949916d8204e37eb8d,
         type: 3}

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehaviour : MonoBehaviour
 {
@@ -68,6 +69,7 @@ public class PlayerBehaviour : MonoBehaviour
                 break;
             case 0:
                 GameObject.FindGameObjectWithTag("Health").GetComponent<Image>().sprite = healthIndicator[3];
+                ResetWhenDie();
                 break;
             default:
                 GameObject.FindGameObjectWithTag("Health").GetComponent<Image>().sprite = healthIndicator[3];
@@ -104,5 +106,10 @@ public class PlayerBehaviour : MonoBehaviour
         if(col.gameObject.CompareTag("Head")) {
             isTouchingHead = false;
         }
+    }
+
+    void ResetWhenDie() {
+        playerHealth = 3;
+        SceneManager.LoadScene(0, LoadSceneMode.Single);
     }
 }

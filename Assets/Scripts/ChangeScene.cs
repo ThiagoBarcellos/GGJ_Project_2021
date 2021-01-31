@@ -11,6 +11,7 @@ public class ChangeScene : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision){
         if (collision.gameObject.tag == "Player")
+            Debug.Log(currentScene + 1);
             SceneManager.LoadScene(currentScene + 1, LoadSceneMode.Single);
     }
 }
