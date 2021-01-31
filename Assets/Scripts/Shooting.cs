@@ -12,18 +12,18 @@ public class Shooting : MonoBehaviour
 
     float moveSpeedInitial;
 
-    void Start() {
-        currentHead = GameObject.FindGameObjectWithTag("CurrentHead");
-    }
-
     void Update()
     {
-        if (Input.GetButtonDown("Fire2") && numberOfShoots > 0 && currentHead.activeSelf)
+        if(GameObject.FindGameObjectWithTag("CurrentHead"))
+            currentHead = GameObject.FindGameObjectWithTag("CurrentHead");
+
+        if (Input.GetButtonDown("Fire2") && numberOfShoots > 0 && currentHead)
         {
             moveSpeedInitial =  PlayerBehaviour.moveSpeed;
             PlayerBehaviour.moveSpeed = 0;
         }
-        if(Input.GetButtonUp("Fire2") && numberOfShoots > 0 && currentHead.activeSelf){
+
+        if (Input.GetButtonUp("Fire2") && numberOfShoots > 0 && currentHead){
             Shoot();
             PlayerBehaviour.moveSpeed = moveSpeedInitial;
         }
