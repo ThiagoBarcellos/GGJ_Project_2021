@@ -21,6 +21,7 @@ public class Shooting : MonoBehaviour
 
     void Update()
     {
+
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
         Vector2 lookDirection = mousePos - rb.position;
@@ -59,7 +60,7 @@ public class Shooting : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D col) {
-        if(col.gameObject.CompareTag("Shoot") && numberOfShoots == 0) {
+        if(col.gameObject.CompareTag("Shoot")) {
             CollectShoot(col.gameObject);
         }
     }
