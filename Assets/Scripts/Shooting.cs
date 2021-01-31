@@ -21,11 +21,6 @@ public class Shooting : MonoBehaviour
 
     void Update()
     {
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-
-        Vector2 lookDirection = mousePos - rb.position;
-        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = angle;
 
         if(GameObject.FindGameObjectWithTag("CurrentHead"))
             currentHead = GameObject.FindGameObjectWithTag("CurrentHead");

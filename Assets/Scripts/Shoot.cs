@@ -10,6 +10,7 @@ public class Shoot : MonoBehaviour
 
     void Start()
     {
+        
         moveSpeedInitial = Shooting.bulletForce;
         moveSpeed = moveSpeedInitial;
 
