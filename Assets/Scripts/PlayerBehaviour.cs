@@ -35,10 +35,6 @@ public class PlayerBehaviour : MonoBehaviour
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
         crossHair.transform.position = mousePos;
-        
-        Vector2 lookDirection = mousePos - rb.position;
-        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = angle;
 
         if(isTouchingHead && Input.GetButtonDown("Collect"))
             CollectHead();

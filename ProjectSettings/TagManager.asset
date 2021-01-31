@@ -13,6 +13,7 @@ TagManager:
   - CurrentHead
   - Shoot
   - PlaceholderHead
+  - FirePoint
   layers:
   - Default
   - TransparentFX
