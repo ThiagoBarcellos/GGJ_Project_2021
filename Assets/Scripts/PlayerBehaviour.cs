@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public static float moveSpeed = 5f;
     public int playerHealth = 3;
     public Sprite[] healthIndicator = new Sprite[4];
     public GameObject crossHair;
