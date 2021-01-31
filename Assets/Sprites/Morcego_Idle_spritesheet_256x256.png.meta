@@ -17,6 +17,12 @@ TextureImporter:
   - first:
       213: 8119243676117726517
     second: Morcego_Idle_spritesheet_256x256_4
+  - first:
+      213: 4541808903584853473
+    second: Morcego_Idle_spritesheet_256x256_5
+  - first:
+      213: 7618169546432851616
+    second: Morcego_Idle_spritesheet_256x256_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -110,7 +116,7 @@ TextureImporter:
         width: 256
         height: 228
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -128,10 +134,10 @@ TextureImporter:
         serializedVersion: 2
         x: 256
         y: 0
-        width: 256
+        width: 251
         height: 228
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,12 +153,12 @@ TextureImporter:
       name: Morcego_Idle_spritesheet_256x256_2
       rect:
         serializedVersion: 2
-        x: 512
+        x: 507
         y: 0
         width: 256
         height: 228
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -168,12 +174,12 @@ TextureImporter:
       name: Morcego_Idle_spritesheet_256x256_3
       rect:
         serializedVersion: 2
-        x: 768
+        x: 764
         y: 0
-        width: 256
+        width: 251
         height: 228
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -186,22 +192,43 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Morcego_Idle_spritesheet_256x256_4
+      name: Morcego_Idle_spritesheet_256x256_5
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 1023
         y: 0
         width: 256
         height: 228
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 22, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eda1ef522fb70f30800000000000000
+      internalID: 4541808903584853473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Morcego_Idle_spritesheet_256x256_6
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 0
+        width: 256
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53575d71b195da070800000000000000
-      internalID: 8119243676117726517
+      spriteID: 0ae24d5f6dc29b960800000000000000
+      internalID: 7618169546432851616
       vertices: []
       indices: 
       edges: []

@@ -41,13 +41,9 @@ public class Shoot : MonoBehaviour
         if(moveSpeed == moveSpeedInitial/2){
             moveSpeed /= 2;
             StartCoroutine(test());
-            Debug.Log(moveSpeed);
-
         }
         else{
             moveSpeed /= 2;
-            Debug.Log(moveSpeed);
-
         }
     }
 }
