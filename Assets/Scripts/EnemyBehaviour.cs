@@ -7,10 +7,17 @@ public class EnemyBehaviour : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         this.GetComponentInParent<EnemyAI>().isTouching = false;
-        if(collision.gameObject.CompareTag("Player")){
+        if(collision.gameObject.CompareTag("Player")) {
             collision.gameObject.GetComponent<PlayerBehaviour>().playerHealth -= damage;
-            Debug.Log(collision.gameObject.GetComponent<PlayerBehaviour>().playerHealth);
             this.GetComponentInParent<CircleCollider2D>().enabled = false;
         }
+
+        if(collision.gameObject.CompareTag("Shoot")) {
+            hp--;
+            if(hp == 0)
+                Destroy(this.gameObject);
+        }
     }
+
+
 }

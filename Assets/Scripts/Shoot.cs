@@ -8,7 +8,6 @@ public class Shoot : MonoBehaviour
     float moveSpeed, moveSpeedInitial;
     Vector3 lastPosition;
 
-    // Start is called before the first frame update
     void Start()
     {
         moveSpeedInitial = Shooting.bulletForce;
@@ -17,7 +16,6 @@ public class Shoot : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         lastPosition = rb.velocity;
