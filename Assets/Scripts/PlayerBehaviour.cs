@@ -14,6 +14,8 @@ public class PlayerBehaviour : MonoBehaviour
     bool isTouchingHead = false;
     Vector2 movement, mousePos;
 
+    public Animator animator;
+
     void Start()
     {
         placeholderHead = GameObject.FindGameObjectWithTag("PlaceholderHead");
@@ -23,11 +25,16 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Update()
     {
-
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        
+        if(movement.x > 0.0f) {
+            animator.SetFloat("speed", Mathf.Abs(movement.x));
+        } else {
+            animator.SetFloat("speed", Mathf.Abs(movement.y));
+        }
     }
 
     void FixedUpdate()
