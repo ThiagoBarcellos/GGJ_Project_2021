@@ -10,7 +10,6 @@ public class Shoot : MonoBehaviour
 
     void Start()
     {
-        
         moveSpeedInitial = Shooting.bulletForce;
         moveSpeed = moveSpeedInitial;
 
@@ -26,7 +25,6 @@ public class Shoot : MonoBehaviour
         while(moveSpeed > 0){
             yield return new WaitForSeconds(0.2f);
             moveSpeed -= 0.75f;
-            Debug.Log(moveSpeed);
         }
 
         rb.velocity = Vector3.zero;
