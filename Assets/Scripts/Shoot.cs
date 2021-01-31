@@ -7,12 +7,11 @@ public class Shoot : MonoBehaviour
     Rigidbody2D rb;
     float moveSpeed, moveSpeedInitial;
     Vector3 lastPosition;
-     public float bulletForce = 20f;
 
     // Start is called before the first frame update
     void Start()
     {
-        moveSpeedInitial = bulletForce;
+        moveSpeedInitial = Shooting.bulletForce;
         moveSpeed = moveSpeedInitial;
 
         rb = GetComponent<Rigidbody2D>();
@@ -26,7 +25,7 @@ public class Shoot : MonoBehaviour
 
      IEnumerator test(){
         while(moveSpeed > 0){
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.2f);
             moveSpeed -= 0.75f;
             Debug.Log(moveSpeed);
         }
@@ -41,7 +40,7 @@ public class Shoot : MonoBehaviour
 
         rb.velocity = direction * moveSpeed;
 
-        if(moveSpeed == moveSpeedInitial/4){
+        if(moveSpeed == moveSpeedInitial/2){
             moveSpeed /= 2;
             StartCoroutine(test());
             Debug.Log(moveSpeed);

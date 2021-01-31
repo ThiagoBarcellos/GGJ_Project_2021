@@ -6,12 +6,12 @@ public class Shooting : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
-
-    public float bulletForce = 20f;
+    public static float bulletForce = 10f;
+    public int numberOfShoots = 1;
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && numberOfShoots > 0)
         {
             Shoot();
         }
@@ -22,5 +22,7 @@ public class Shooting : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+
+        numberOfShoots--;
     }
 }
