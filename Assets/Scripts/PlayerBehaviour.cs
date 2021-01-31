@@ -7,7 +7,7 @@ public class PlayerBehaviour : MonoBehaviour
     public int playerHealth = 3;
     public Sprite[] healthIndicator = new Sprite[4];
     public GameObject crossHair;
-    public Rigidbody2D rb;
+    public Rigidbody2D rb, firePointRb;
     public Camera cam;
     GameObject newHead, currentHead;
     bool isTouchingHead = false;
@@ -15,9 +15,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Start()
     {
-        if(GameObject.FindGameObjectWithTag("CurrentHead"))
-            currentHead = GameObject.FindGameObjectWithTag("CurrentHead");
-        
+        currentHead = GameObject.FindGameObjectWithTag("CurrentHead");
         cam = Camera.main;
         Cursor.visible = false;
     }
@@ -37,9 +35,10 @@ public class PlayerBehaviour : MonoBehaviour
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
         crossHair.transform.position = mousePos;
-        Vector2 lookDirection = mousePos - rb.position;
+        
+        Vector2 lookDirection = mousePos - firePointRb.position;
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = angle;
+        firePointRb.rotation = angle;
 
         if(isTouchingHead && Input.GetButtonDown("Collect"))
             CollectHead();
@@ -77,17 +76,24 @@ public class PlayerBehaviour : MonoBehaviour
     }
 
     void CollectHead() {
-        Transform player = this.gameObject.transform;
-        Vector2 playerPos = new Vector2(player.position.x, player.position.y);
-
-        if(currentHead)
-            Destroy(currentHead);
+        Transform headPos = currentHead.transform;
+        GameObject instantiatedHead = Instantiate(newHead, headPos.position, headPos.rotation);
         
-        newHead.transform.SetParent(player);
-        // newHead.transform.position = playerPos + new Vector2(0, 0.5f);
+        instantiatedHead.transform.SetParent(this.transform);
+        instantiatedHead.tag = "CurrentHead";
+
+        Destroy(newHead);
+        isTouchingHead = false;
     }
 
     void OnTriggerEnter2D(Collider2D col) {
+        if(col.gameObject.CompareTag("Head")) {
+            isTouchingHead = true;
+            newHead = col.gameObject;
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D col) {
         if(col.gameObject.CompareTag("Head")) {
             isTouchingHead = true;
             newHead = col.gameObject;
