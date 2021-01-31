@@ -9,13 +9,13 @@ public class PlayerBehaviour : MonoBehaviour
     public GameObject crossHair;
     public Rigidbody2D rb;
     public Camera cam;
-    GameObject newHead, currentHead;
+    GameObject newHead, placeholderHead;
     bool isTouchingHead = false;
     Vector2 movement, mousePos;
 
     void Start()
     {
-        currentHead = GameObject.FindGameObjectWithTag("CurrentHead");
+        placeholderHead = GameObject.FindGameObjectWithTag("PlaceholderHead");
         cam = Camera.main;
         Cursor.visible = false;
     }
@@ -76,7 +76,7 @@ public class PlayerBehaviour : MonoBehaviour
     }
 
     void CollectHead() {
-        Transform headPos = currentHead.transform;
+        Transform headPos = placeholderHead.transform;
         GameObject instantiatedHead = Instantiate(newHead, headPos.position, headPos.rotation);
         
         instantiatedHead.transform.SetParent(this.transform);

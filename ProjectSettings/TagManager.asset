@@ -11,6 +11,8 @@ TagManager:
   - Health
   - Head
   - CurrentHead
+  - Shoot
+  - PlaceholderHead
   layers:
   - Default
   - TransparentFX

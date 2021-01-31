@@ -10,16 +10,13 @@ public class Shooting : MonoBehaviour
     public int numberOfShoots = 1;
     GameObject currentHead;
 
-    void Start() {
-        currentHead = GameObject.FindGameObjectWithTag("CurrentHead");
-    }
-
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && numberOfShoots > 0 && currentHead.activeSelf)
-        {
+        if(GameObject.FindGameObjectWithTag("CurrentHead"))
+            currentHead = GameObject.FindGameObjectWithTag("CurrentHead");
+
+        if (Input.GetButtonDown("Fire1") && numberOfShoots > 0 && currentHead)
             Shoot();
-        }
     }
 
     void Shoot()
@@ -33,8 +30,8 @@ public class Shooting : MonoBehaviour
     }
 
     void CollectShoot(GameObject obj) {
-        numberOfShoots = 1;
         currentHead.SetActive(true);
+        numberOfShoots = 1;
         Destroy(obj);
     }
 
