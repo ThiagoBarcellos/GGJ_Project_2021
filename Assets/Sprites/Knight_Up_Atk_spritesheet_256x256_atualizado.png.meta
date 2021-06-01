@@ -1,28 +1,22 @@
 fileFormatVersion: 2
-guid: 339de3e206c438647a2d1c3a466d7ae0
+guid: 40f8c5a90b9ae754ab8b254143d2d6d6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4041171925407138174
-    second: Morcego_Idle_spritesheet_256x256_0
+      213: 6589214347809977896
+    second: Knight_Up_Atk_spritesheet_256x256_atualizado_0
   - first:
-      213: -5890849930483668181
-    second: Morcego_Idle_spritesheet_256x256_1
+      213: 8298995443581392760
+    second: Knight_Up_Atk_spritesheet_256x256_atualizado_1
   - first:
-      213: 1704005325964575036
-    second: Morcego_Idle_spritesheet_256x256_2
+      213: -9045030544336658577
+    second: Knight_Up_Atk_spritesheet_256x256_atualizado_2
   - first:
-      213: -5638515774173274743
-    second: Morcego_Idle_spritesheet_256x256_3
+      213: -3385313464658815015
+    second: Knight_Up_Atk_spritesheet_256x256_atualizado_3
   - first:
-      213: 8119243676117726517
-    second: Morcego_Idle_spritesheet_256x256_4
-  - first:
-      213: 4541808903584853473
-    second: Morcego_Idle_spritesheet_256x256_5
-  - first:
-      213: 7618169546432851616
-    second: Morcego_Idle_spritesheet_256x256_6
+      213: -7644893958990764287
+    second: Knight_Up_Atk_spritesheet_256x256_atualizado_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -66,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 126
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -82,10 +76,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 512
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -94,10 +88,10 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 512
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -108,127 +102,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Morcego_Idle_spritesheet_256x256_0
+      name: Knight_Up_Atk_spritesheet_256x256_atualizado_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 256
-        height: 228
+        width: 156
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e718c228470251830800000000000000
-      internalID: 4041171925407138174
+      spriteID: 826fe16c987917b50800000000000000
+      internalID: 6589214347809977896
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Morcego_Idle_spritesheet_256x256_1
+      name: Knight_Up_Atk_spritesheet_256x256_atualizado_1
       rect:
         serializedVersion: 2
-        x: 256
+        x: 156
         y: 0
-        width: 251
-        height: 228
+        width: 156
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2be264033f7f3ea0800000000000000
-      internalID: -5890849930483668181
+      spriteID: 877114fc264fb2370800000000000000
+      internalID: 8298995443581392760
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Morcego_Idle_spritesheet_256x256_2
+      name: Knight_Up_Atk_spritesheet_256x256_atualizado_2
       rect:
         serializedVersion: 2
-        x: 507
+        x: 312
         y: 0
-        width: 256
-        height: 228
+        width: 156
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c310e75d0d7d5a710800000000000000
-      internalID: 1704005325964575036
+      spriteID: f6f514e74a8997280800000000000000
+      internalID: -9045030544336658577
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Morcego_Idle_spritesheet_256x256_3
+      name: Knight_Up_Atk_spritesheet_256x256_atualizado_3
       rect:
         serializedVersion: 2
-        x: 764
+        x: 468
         y: 0
-        width: 251
-        height: 228
+        width: 156
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98d17fb07c7ffb1b0800000000000000
-      internalID: -5638515774173274743
+      spriteID: 9d71aad0753f401d0800000000000000
+      internalID: -3385313464658815015
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Morcego_Idle_spritesheet_256x256_5
+      name: Knight_Up_Atk_spritesheet_256x256_atualizado_4
       rect:
         serializedVersion: 2
-        x: 1023
+        x: 624
         y: 0
-        width: 256
-        height: 228
+        width: 156
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 22, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1eda1ef522fb70f30800000000000000
-      internalID: 4541808903584853473
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Morcego_Idle_spritesheet_256x256_6
-      rect:
-        serializedVersion: 2
-        x: 1256
-        y: 0
-        width: 256
-        height: 228
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ae24d5f6dc29b960800000000000000
-      internalID: 7618169546432851616
+      spriteID: 10763dcd271e7e590800000000000000
+      internalID: -7644893958990764287
       vertices: []
       indices: 
       edges: []
