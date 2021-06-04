@@ -14,20 +14,18 @@ public class Shooting : MonoBehaviour
 
     void Start(){
         cam = Camera.main;
-        rb = GameObject.FindGameObjectWithTag("FirePoint").GetComponent<Rigidbody2D>();
     }
 
     float moveSpeedInitial;
 
     void Update()
     {
-
         if(GameObject.FindGameObjectWithTag("CurrentHead"))
             currentHead = GameObject.FindGameObjectWithTag("CurrentHead");
 
         if (Input.GetButtonDown("Fire2") && numberOfShoots > 0 && currentHead)
         {
-            moveSpeedInitial =  PlayerBehaviour.moveSpeed;
+            moveSpeedInitial = PlayerBehaviour.moveSpeed;
             PlayerBehaviour.moveSpeed = 0;
         }
 
@@ -40,9 +38,13 @@ public class Shooting : MonoBehaviour
     void Shoot()
     {
         currentHead.SetActive(false);
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+        Vector3 moveDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - GameObject.FindGameObjectWithTag("Player").transform.position);
+        moveDirection.z = 0;       
+        moveDirection.Normalize();
+        Vector2 playerTransform = new Vector2(transform.position.x + CalculateOffset().x, transform.position.y + CalculateOffset().y);
+        GameObject bulletInstance = Instantiate(bulletPrefab, playerTransform, Quaternion.Euler(new Vector3(0,0,0)));
+        Rigidbody2D rb = bulletInstance.GetComponent<Rigidbody2D>();
+        rb.AddForce(moveDirection * bulletForce, ForceMode2D.Impulse);
 
         numberOfShoots--;
     }
@@ -57,5 +59,31 @@ public class Shooting : MonoBehaviour
         if(col.gameObject.CompareTag("Shoot")) {
             CollectShoot(col.gameObject);
         }
+    }
+
+    Vector2 CalculateOffset(){
+        Vector3 moveDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - GameObject.FindGameObjectWithTag("Player").transform.position);
+        moveDirection.z = 0;       
+        moveDirection.Normalize();
+        float offsetDistance = 0.5f;
+        Vector2 offset = new Vector2(0,0);
+        if(moveDirection.x >= this.transform.position.x && moveDirection.y >= this.transform.position.y){
+            //Primeiro quadrante
+            offset = new Vector2(0,offsetDistance);
+        }
+        else if(moveDirection.x < this.transform.position.x && moveDirection.y >= this.transform.position.y){
+            //Segundo quadrante
+            offset = new Vector2(0,offsetDistance);
+        }
+        else if(moveDirection.x < this.transform.position.x && moveDirection.y < this.transform.position.y){
+            //Terceiro quadrante
+            offset = new Vector2(offsetDistance * -1,offsetDistance * -1);
+        }
+        else if(moveDirection.x >= this.transform.position.x && moveDirection.y < this.transform.position.y){
+            //Quarto quadrante
+            offset = new Vector2(offsetDistance,offsetDistance * -1);
+        }
+
+        return offset;
     }
 }

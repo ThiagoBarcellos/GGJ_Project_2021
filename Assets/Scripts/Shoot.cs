@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Shoot : MonoBehaviour
@@ -26,7 +25,6 @@ public class Shoot : MonoBehaviour
         while(moveSpeed > 0){
             yield return new WaitForSeconds(0.2f);
             moveSpeed -= 0.75f;
-            Debug.Log(moveSpeed);
         }
 
         rb.velocity = Vector3.zero;
@@ -48,4 +46,3 @@ public class Shoot : MonoBehaviour
         }
     }
 }
-
