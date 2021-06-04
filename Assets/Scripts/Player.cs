@@ -4,16 +4,15 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    private static float moveSpeed = 5f;
+    public float moveSpeed = 5f;
     private int playerHealth = 3;
     public Sprite[] healthIndicator = new Sprite[4];
     private Animator playerAnimator;
     public Transform playerCharacter;
     private SpriteRenderer spriteRenderer;
-    public GameObject crossHair;
     private Rigidbody2D rb;
     private Camera cam;
-    public static GameObject newHead, placeholderHead;
+    public static GameObject newHead, placeholderHead, crossHair;
     bool isTouchingHead = false;
     Vector2 movement, mousePos;
     private bool lookingRight = true;
@@ -25,6 +24,7 @@ public class Player : MonoBehaviour
         this.rb = this.GetComponent<Rigidbody2D>();
         this.spriteRenderer = this.GetComponent<SpriteRenderer>();
         placeholderHead = GameObject.FindGameObjectWithTag("PlaceholderHead");
+        crossHair = GameObject.FindGameObjectWithTag("CrossHair");
         this.cam = Camera.main;
         Cursor.visible = false;
     }
@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
         crossHair.transform.position = mousePos;
         if(isTouchingHead && Input.GetButtonDown("Collect")) CollectHead();
         Flip();
+        ShootAnimation();
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -122,5 +123,13 @@ public class Player : MonoBehaviour
             this.spriteRenderer.flipX = false;
             lookingRight = !lookingRight;
         }
+    }
+
+    void ShootAnimation(){
+        Shooting shooting = this.GetComponent<Shooting>();
+        if(shooting.isShooting)
+            playerAnimator.SetBool("Shoot", true);
+        else
+            playerAnimator.SetBool("Shoot", false);
     }
 }
