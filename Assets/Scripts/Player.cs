@@ -4,8 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    private int playerHealth = 3;
+    #region Variaveis
+    public static float moveSpeed = 5f;
+    public int playerHealth = 3;
     public Sprite[] healthIndicator = new Sprite[4];
     private Animator playerAnimator;
     public Transform playerCharacter;
@@ -16,6 +17,7 @@ public class Player : MonoBehaviour
     bool isTouchingHead = false;
     Vector2 movement, mousePos;
     private bool lookingRight = true;
+    #endregion
 
     void Start()
     {
@@ -45,6 +47,7 @@ public class Player : MonoBehaviour
         if(isTouchingHead && Input.GetButtonDown("Collect")) CollectHead();
         Flip();
         ShootAnimation();
+        AttackAnimation();
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -117,19 +120,36 @@ public class Player : MonoBehaviour
         Vector2 playerLocalScale = this.playerCharacter.localScale;
         if(mousePos.x < rb.transform.position.x && lookingRight) {
             this.spriteRenderer.flipX = true;
+            GameObject head = GameObject.FindGameObjectWithTag("PlaceholderHead");
+            head.transform.localScale *= -1;
             lookingRight = !lookingRight;
         }
         else if(mousePos.x >= rb.transform.position.x && !lookingRight) {
             this.spriteRenderer.flipX = false;
+            GameObject head = GameObject.FindGameObjectWithTag("PlaceholderHead");
+            head.transform.localScale *= -1;
             lookingRight = !lookingRight;
         }
     }
 
     void ShootAnimation(){
-        Shooting shooting = this.GetComponent<Shooting>();
+        PlayerCombat shooting = this.GetComponent<PlayerCombat>();
         if(shooting.isShooting)
             playerAnimator.SetBool("Shoot", true);
         else
             playerAnimator.SetBool("Shoot", false);
+    }
+    void AttackAnimation(){
+        PlayerCombat Attacking = this.GetComponent<PlayerCombat>();
+        if(Attacking.isAttacking && Attacking.attackHorizontal)
+            playerAnimator.SetBool("AttackHorizontal", true);
+        else if(Attacking.isAttacking && Attacking.attackUp)
+            playerAnimator.SetBool("AttackUp", true);
+        else if(Attacking.isAttacking && Attacking.attackDown)
+            playerAnimator.SetBool("AttackDown", true);
+        else
+            playerAnimator.SetBool("AttackHorizontal", false);
+            playerAnimator.SetBool("AttackUp", false);
+            playerAnimator.SetBool("AttackDown", false);
     }
 }

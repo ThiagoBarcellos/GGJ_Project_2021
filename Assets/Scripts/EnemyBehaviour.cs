@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-
 public class EnemyBehaviour : MonoBehaviour
 {
     private int hp = 1;
@@ -8,7 +7,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         this.GetComponentInParent<EnemyAI>().isTouching = false;
         if(collision.gameObject.CompareTag("Player")) {
-            collision.gameObject.GetComponent<PlayerBehaviour>().playerHealth -= damage;
+            collision.gameObject.GetComponent<Player>().playerHealth -= damage;
             this.GetComponentInParent<CircleCollider2D>().enabled = false;
         }
 

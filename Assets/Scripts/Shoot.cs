@@ -10,7 +10,7 @@ public class Shoot : MonoBehaviour
     void Start()
     {
         
-        moveSpeedInitial = Shooting.bulletForce;
+        moveSpeedInitial = PlayerCombat.bulletForce;
         moveSpeed = moveSpeedInitial;
 
         rb = GetComponent<Rigidbody2D>();

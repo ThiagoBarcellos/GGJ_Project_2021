@@ -117,7 +117,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0020435555, y: 0.008927481}
+  m_Offset: {x: -0.0008279439, y: 0.011359275}
   m_SpriteTilingProperty:
     border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
     pivot: {x: 0.5, y: 0.5}
@@ -128,7 +128,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.054481357, y: 0.044697862}
+  m_Size: {x: 0.032600474, y: 0.023622511}
   m_EdgeRadius: 0
 --- !u!1 &148834715009499184
 GameObject:
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 148834715009499187}
   - component: {fileID: 148834715009500104}
   m_Layer: 0
-  m_Name: PlayerTest
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -279,13 +279,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  playerHealth: 3
   healthIndicator:
   - {fileID: 21300000, guid: 28c4ace094bdf054b86f285c5419e273, type: 3}
   - {fileID: 21300000, guid: 6e21f770e4e414d409d167853f89d02e, type: 3}
   - {fileID: 21300000, guid: f0fce34a608ad2041bb3376121a74d46, type: 3}
   - {fileID: 21300000, guid: 204b7a20b386b59418f2f0a6856711e3, type: 3}
   playerCharacter: {fileID: 148834715009500105}
-  crossHair: {fileID: 0}
 --- !u!114 &148834715009499186
 MonoBehaviour:
   m_ObjectHideFlags: 0
